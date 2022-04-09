@@ -1,0 +1,38 @@
+import javax.swing.JOptionPane;
+
+public class prueba_enum {
+	
+enum medida {
+	METRO("m") , PIE("ft") , KILOMETRO("km");
+	
+	private String simbolo;
+	
+	private medida (String simbolo)
+	{
+		this.simbolo=simbolo;
+	}
+	
+	public String damesimbolo(){
+		return simbolo;
+	}
+	
+}
+private static String entrada_dato;
+public static void main (String [] args)
+{
+
+	
+	entrada_dato= JOptionPane.showInputDialog(new String [] {"ingrese una de las siguientes medidas :" ,"Metro" , "Pie" , "Kilometro"});
+	
+	entrada_dato = entrada_dato.toUpperCase();
+	medida simbolo = Enum.valueOf(medida.class ,entrada_dato);
+	
+	System.out.println("la medida es :" +entrada_dato);
+	System.out.println("el simbolo de la medida es :" +simbolo.damesimbolo());
+	
+}
+
+		
+	
+
+}
